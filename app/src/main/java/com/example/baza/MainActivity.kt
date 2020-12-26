@@ -15,6 +15,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main_start.*
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
@@ -103,13 +105,12 @@ class MainActivity() : Activity(), View.OnClickListener {
         val db = romahki!!.writableDatabase
         when (v.id) {
             R.id.btnAdd -> {
-
                 val date = LocalDate.now()
-                var formatter = DateTimeFormatter.ofPattern("MM-yyyy")
+                val formatter = DateTimeFormatter.ofPattern("MM-yyyy")
                 val formatted = date.format(formatter)
                 val period = Period.of(0, 1, 0)
-                var Date2 = date.plus(period)
-                var Date3 = Date2.plus(period)
+                val Date2 = date.plus(period)
+                val Date3 = Date2.plus(period)
                 val Date4 = Date3.plus(period)
                 val Date5 = Date4.plus(period)
                 val Date6 = Date5.plus(period)
@@ -133,7 +134,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 val formatted11 = Date12.format(formatter)
 
                 data1?.text = formatted.toString()
-                data2!!.text = formatted1.toString()
+                data2?.text = formatted1.toString()
                 data3?.text = formatted2.toString()
                 data4?.text = formatted3.toString()
                 data5?.text = formatted4.toString()
@@ -144,6 +145,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 data10?.text = formatted9.toString()
                 data11?.text = formatted10.toString()
                 data12?.text = formatted11.toString()
+
             }
             R.id.data1 -> {
                 val data1 = data1!!.text.toString()

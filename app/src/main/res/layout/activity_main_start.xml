@@ -13,7 +13,7 @@
         android:id="@+id/textView2"
         android:layout_width="178dp"
         android:layout_height="95dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="СКАНЕР РОМАШЕК"
         android:textAlignment="center"
@@ -24,10 +24,9 @@
 
     <Button
         android:id="@+id/start"
-        android:onClick="begin"
         android:layout_width="310dp"
         android:layout_height="125dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="НАЧАТЬ РАБОТУ"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,10 +34,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/KolVo"
         android:layout_width="172dp"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Ввод кол-вом"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,9 +47,19 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Убрать позицию"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/KolVo" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Стереть данные"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
