@@ -26,7 +26,6 @@ class MainActivity() : Activity(), View.OnClickListener {
     val LOG_TAG = "myLogs1"
     var btnAdd: Button? = null
     var btnKolVo: Button? = null
-    var btnClear: Button? = null
     var COD: EditText? = null
     var DATE: EditText? = null
     var KLV: EditText? = null
@@ -51,8 +50,6 @@ class MainActivity() : Activity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         btnAdd = findViewById<View>(R.id.btnAdd) as Button
         btnAdd!!.setOnClickListener(this)
-        btnClear = findViewById<View>(R.id.btnClear) as Button
-        btnClear!!.setOnClickListener(this)
         COD = findViewById<View>(R.id.COD) as EditText
         KLV = findViewById<View>(R.id.KLV) as EditText
         DATE = findViewById<View>(R.id.DATE) as EditText
@@ -286,17 +283,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 }
             }
 
-            R.id.btnClear -> {
-                Log.d(LOG_TAG, "--- Clear romashki: ---")
-                // удаляем все записи
-                //   val clearCount = db.delete("romashki", null, null)
-                //   Log.d(LOG_TAG, "deleted rows count = $clearCount")
-                deleteDatabase("romashki")
-                val mycount = Toast.makeText(this, "              ВсЁ!!! \nНачинай сначала!!! \nИнформация удалена!!!", Toast.LENGTH_LONG)
-                mycount.setGravity(Gravity.CENTER, 0, 0)
-                mycount.show()
 
-            }
 
         }
         // закрываем подключение к БД

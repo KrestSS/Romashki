@@ -47,7 +47,8 @@
             android:id="@+id/DATE"
             android:layout_width="1dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></EditText><![CDATA[
+            android:layout_weight="1"
+            tools:ignore="MissingConstraints"></EditText><![CDATA[
 
 
 
@@ -66,16 +67,6 @@
         android:layout_height="wrap_content"
         android:text="StarT"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/COD"></Button>
-
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:text="Clear"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toEndOf="@+id/btnAdd"
         app:layout_constraintTop_toBottomOf="@+id/COD"></Button>
 
     <Button
@@ -217,10 +208,11 @@
         android:id="@+id/KolVo"
         android:layout_width="103dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:text="KolVo"
-        app:layout_constraintStart_toEndOf="@+id/btnClear"
-        app:layout_constraintTop_toBottomOf="@+id/COD" />
+        app:layout_constraintStart_toEndOf="@+id/btnAdd"
+        app:layout_constraintTop_toBottomOf="@+id/COD"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/KLV"
