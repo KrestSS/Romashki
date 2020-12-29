@@ -19,6 +19,7 @@ import java.time.format.DateTimeFormatter
 class MainStart : AppCompatActivity(), View.OnClickListener {
     var start: Button? = null
     var clear: Button? = null
+    var kolVo: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,8 @@ class MainStart : AppCompatActivity(), View.OnClickListener {
         start!!.setOnClickListener(this)
         clear = findViewById<View>(R.id.clear) as Button
         clear!!.setOnClickListener(this)
+        kolVo = findViewById<View>(R.id.KolVo) as Button
+        kolVo!!.setOnClickListener(this)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -34,7 +37,6 @@ class MainStart : AppCompatActivity(), View.OnClickListener {
         if (v != null) {
             when (v.id) {
                 R.id.start -> {
-
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 }
@@ -43,7 +45,10 @@ class MainStart : AppCompatActivity(), View.OnClickListener {
                     val mycount = Toast.makeText(this, "Информация удалена!!!", Toast.LENGTH_LONG)
                     mycount.setGravity(Gravity.CENTER, 0, 0)
                     mycount.show()
-
+                }
+                R.id.KolVo -> {
+                    val intent = Intent(this, ActivityKolvo::class.java)
+                    startActivity(intent)
                 }
                 else -> {
                     // else condition
