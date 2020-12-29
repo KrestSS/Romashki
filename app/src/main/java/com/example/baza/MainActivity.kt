@@ -9,14 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_start.*
+import java.nio.file.Paths.get
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
@@ -24,7 +23,6 @@ import java.time.format.DateTimeFormatter
 
 class MainActivity() : Activity(), View.OnClickListener {
     val LOG_TAG = "myLogs1"
-    var btnAdd: Button? = null
     var btnKolVo: Button? = null
     var COD: EditText? = null
     var DATE: EditText? = null
@@ -45,11 +43,10 @@ class MainActivity() : Activity(), View.OnClickListener {
 
 
     /** Called when the activity is first created.  */
+    @RequiresApi(Build.VERSION_CODES.O)
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btnAdd = findViewById<View>(R.id.btnAdd) as Button
-        btnAdd!!.setOnClickListener(this)
         COD = findViewById<View>(R.id.COD) as EditText
         KLV = findViewById<View>(R.id.KLV) as EditText
         DATE = findViewById<View>(R.id.DATE) as EditText
@@ -80,6 +77,47 @@ class MainActivity() : Activity(), View.OnClickListener {
         data12 = findViewById<View>(R.id.data12) as Button
         data12!!.setOnClickListener(this)
 
+        val date = LocalDate.now()
+        val formatter = DateTimeFormatter.ofPattern("MM-yyyy")
+        val formatted = date.format(formatter)
+        val period = Period.of(0, 1, 0)
+        val Date2 = date.plus(period)
+        val Date3 = Date2.plus(period)
+        val Date4 = Date3.plus(period)
+        val Date5 = Date4.plus(period)
+        val Date6 = Date5.plus(period)
+        val Date7 = Date6.plus(period)
+        val Date8 = Date7.plus(period)
+        val Date9 = Date8.plus(period)
+        val Date10 = Date9.plus(period)
+        val Date11 = Date10.plus(period)
+        val Date12 = Date11.plus(period)
+
+        val formatted1 = Date2.format(formatter)
+        val formatted2 = Date3.format(formatter)
+        val formatted3 = Date4.format(formatter)
+        val formatted4 = Date5.format(formatter)
+        val formatted5 = Date6.format(formatter)
+        val formatted6 = Date7.format(formatter)
+        val formatted7 = Date8.format(formatter)
+        val formatted8 = Date9.format(formatter)
+        val formatted9 = Date10.format(formatter)
+        val formatted10 = Date11.format(formatter)
+        val formatted11 = Date12.format(formatter)
+
+        data1?.text = formatted.toString()
+        data2?.text = formatted1.toString()
+        data3?.text = formatted2.toString()
+        data4?.text = formatted3.toString()
+        data5?.text = formatted4.toString()
+        data6?.text = formatted5.toString()
+        data7?.text = formatted6.toString()
+        data8?.text = formatted7.toString()
+        data9?.text = formatted8.toString()
+        data10?.text = formatted9.toString()
+        data11?.text = formatted10.toString()
+        data12?.text = formatted11.toString()
+
 
 
         // создаем объект для создания и управления версиями БД
@@ -101,49 +139,6 @@ class MainActivity() : Activity(), View.OnClickListener {
         // подключаемся к БД
         val db = romahki!!.writableDatabase
         when (v.id) {
-            R.id.btnAdd -> {
-                val date = LocalDate.now()
-                val formatter = DateTimeFormatter.ofPattern("MM-yyyy")
-                val formatted = date.format(formatter)
-                val period = Period.of(0, 1, 0)
-                val Date2 = date.plus(period)
-                val Date3 = Date2.plus(period)
-                val Date4 = Date3.plus(period)
-                val Date5 = Date4.plus(period)
-                val Date6 = Date5.plus(period)
-                val Date7 = Date6.plus(period)
-                val Date8 = Date7.plus(period)
-                val Date9 = Date8.plus(period)
-                val Date10 = Date9.plus(period)
-                val Date11 = Date10.plus(period)
-                val Date12 = Date11.plus(period)
-
-                val formatted1 = Date2.format(formatter)
-                val formatted2 = Date3.format(formatter)
-                val formatted3 = Date4.format(formatter)
-                val formatted4 = Date5.format(formatter)
-                val formatted5 = Date6.format(formatter)
-                val formatted6 = Date7.format(formatter)
-                val formatted7 = Date8.format(formatter)
-                val formatted8 = Date9.format(formatter)
-                val formatted9 = Date10.format(formatter)
-                val formatted10 = Date11.format(formatter)
-                val formatted11 = Date12.format(formatter)
-
-                data1?.text = formatted.toString()
-                data2?.text = formatted1.toString()
-                data3?.text = formatted2.toString()
-                data4?.text = formatted3.toString()
-                data5?.text = formatted4.toString()
-                data6?.text = formatted5.toString()
-                data7?.text = formatted6.toString()
-                data8?.text = formatted7.toString()
-                data9?.text = formatted8.toString()
-                data10?.text = formatted9.toString()
-                data11?.text = formatted10.toString()
-                data12?.text = formatted11.toString()
-
-            }
             R.id.data1 -> {
                 val data1 = data1!!.text.toString()
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
@@ -270,15 +265,15 @@ class MainActivity() : Activity(), View.OnClickListener {
                     val idColIndex = c.getColumnIndex("id")
                     val nameColIndex = c.getColumnIndex("COD")
                     val emailColIndex = c.getColumnIndex("DATE")
-                 //   Log.d(LOG_TAG, "row inserted, ID =  + c.getInt(idColIndex)")
+                    //   Log.d(LOG_TAG, "row inserted, ID =  + c.getInt(idColIndex)")
                     cv.put("COD", c.getString(nameColIndex))
                     cv.put("DATE", c.getString(emailColIndex))
                     var kvl = kolv.toInt()
-                //    Log.d(LOG_TAG, "--- Clear romashki: --- $kolv")
-                    var n=kvl
-                 repeat(n-1) {
+                    //    Log.d(LOG_TAG, "--- Clear romashki: --- $kolv")
+                    var n = kvl
+                    repeat(n - 1) {
                         var put = db.insert("romashki", null, cv)
-                     KLV!!.text.clear()
+                        KLV!!.text.clear()
                     }
                 }
             }

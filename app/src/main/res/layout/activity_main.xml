@@ -59,15 +59,9 @@
 
 
 
-    ]]>
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="StarT"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/COD"></Button>
+
+    ]]>
 
     <Button
         android:id="@+id/data1"
@@ -132,8 +126,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:baselineAligned="false"
-        android:text="data6
-"
+        android:text="data6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -210,7 +203,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:text="KolVo"
-        app:layout_constraintStart_toEndOf="@+id/btnAdd"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/COD"
         tools:ignore="MissingConstraints" />
 
