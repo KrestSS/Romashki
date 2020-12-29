@@ -10,26 +10,30 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="95dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/purple_200"
-        android:text="ШтрихКод"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="sans-serif-black"
+        android:text="ШтрихКод:"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="18sp"
+        android:typeface="monospace"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <EditText
         android:id="@+id/COD"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="185dp"
+        android:layout_height="46dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:inputType="number"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent">
@@ -61,27 +65,31 @@
 
 
 
+
+
     ]]>
 
     <Button
         android:id="@+id/data1"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data1"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/COD"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/data2"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data2"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data3"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -89,10 +97,10 @@
         android:id="@+id/data3"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data3"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data4"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -100,10 +108,10 @@
         android:id="@+id/data4"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data4"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data5"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -111,10 +119,10 @@
         android:id="@+id/data5"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data5"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data6"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -122,11 +130,11 @@
         android:id="@+id/data6"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:baselineAligned="false"
         android:text="data6"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -134,22 +142,24 @@
         android:id="@+id/data7"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:baselineAligned="false"
         android:text="data7"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data8"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/COD"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/data8"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data8"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data9"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -157,10 +167,10 @@
         android:id="@+id/data9"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data9"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data10"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -168,10 +178,10 @@
         android:id="@+id/data10"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data10"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data11"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -179,10 +189,10 @@
         android:id="@+id/data11"
         android:layout_width="140dp"
         android:layout_height="51dp"
-        android:textSize="24sp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="data11"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/data12"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -196,26 +206,5 @@
         android:text="data12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/KolVo"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:text="KolVo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/COD"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/KLV"
-        android:layout_width="43dp"
-        android:layout_height="52dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/KolVo"
-        app:layout_constraintTop_toBottomOf="@+id/COD" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

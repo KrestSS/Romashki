@@ -23,10 +23,8 @@ import java.time.format.DateTimeFormatter
 
 class MainActivity() : Activity(), View.OnClickListener {
     val LOG_TAG = "myLogs1"
-    var btnKolVo: Button? = null
     var COD: EditText? = null
     var DATE: EditText? = null
-    var KLV: EditText? = null
     internal var romahki: DBHelper? = null
     var data1: Button? = null
     var data2: Button? = null
@@ -48,12 +46,9 @@ class MainActivity() : Activity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         COD = findViewById<View>(R.id.COD) as EditText
-        KLV = findViewById<View>(R.id.KLV) as EditText
         DATE = findViewById<View>(R.id.DATE) as EditText
         data1 = findViewById<View>(R.id.data1) as Button
         data1!!.setOnClickListener(this)
-        btnKolVo = findViewById<View>(R.id.KolVo) as Button
-        btnKolVo!!.setOnClickListener(this)
         data2 = findViewById<View>(R.id.data2) as Button
         data2!!.setOnClickListener(this)
         data3 = findViewById<View>(R.id.data3) as Button
@@ -133,7 +128,6 @@ class MainActivity() : Activity(), View.OnClickListener {
 
         // получаем данные из полей ввода
         val cod = COD!!.text.toString()
-        var kolv = KLV!!.text.toString()
 
 
         // подключаемся к БД
@@ -259,26 +253,6 @@ class MainActivity() : Activity(), View.OnClickListener {
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
-            R.id.KolVo -> {
-                val c: Cursor = db.query("romashki", null, null, null, null, null, null)
-                if (c.moveToLast()) {
-                    val idColIndex = c.getColumnIndex("id")
-                    val nameColIndex = c.getColumnIndex("COD")
-                    val emailColIndex = c.getColumnIndex("DATE")
-                    //   Log.d(LOG_TAG, "row inserted, ID =  + c.getInt(idColIndex)")
-                    cv.put("COD", c.getString(nameColIndex))
-                    cv.put("DATE", c.getString(emailColIndex))
-                    var kvl = kolv.toInt()
-                    //    Log.d(LOG_TAG, "--- Clear romashki: --- $kolv")
-                    var n = kvl
-                    repeat(n - 1) {
-                        var put = db.insert("romashki", null, cv)
-                        KLV!!.text.clear()
-                    }
-                }
-            }
-
-
 
         }
         // закрываем подключение к БД
