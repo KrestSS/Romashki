@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.annotation.RequiresApi
+import kotlinx.android.synthetic.main.activity_vvod.*
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
@@ -135,13 +136,14 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data1)
+                val intent = Intent(this, ActivityVvod::class.java)
+                startActivity(intent)
                 val rowID = db.insert("romashki", null, cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
-                val intent = Intent(this, ActivityVvod::class.java)
-               startActivity(intent)
-                COD!!.text.clear()
-                DATE!!.text.clear()
-            }
+                    COD!!.text.clear()
+                    DATE!!.text.clear()
+                }
+
             R.id.data2 -> {
                 val data2 = data2!!.text.toString()
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
