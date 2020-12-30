@@ -1,10 +1,12 @@
 package com.example.baza
 
-import android.app.Activity
 import android.content.ContentValues
+import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,12 +17,11 @@ import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
 
-
-class MainActivity() : Activity(), View.OnClickListener {
+class Activitydelete : AppCompatActivity(), View.OnClickListener {
     val LOG_TAG = "myLogs1"
     var COD: EditText? = null
     var DATE: EditText? = null
-    internal var romahki: DBHelper? = null
+    var romahki: DBHelper? = null
     var data1: Button? = null
     var data2: Button? = null
     var data3: Button? = null
@@ -33,13 +34,14 @@ class MainActivity() : Activity(), View.OnClickListener {
     var data10: Button? = null
     var data11: Button? = null
     var data12: Button? = null
+    var back: Button? = null
 
 
     /** Called when the activity is first created.  */
     @RequiresApi(Build.VERSION_CODES.O)
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_kolvo)
         COD = findViewById<View>(R.id.COD) as EditText
         DATE = findViewById<View>(R.id.DATE) as EditText
         data1 = findViewById<View>(R.id.data1) as Button
@@ -66,6 +68,8 @@ class MainActivity() : Activity(), View.OnClickListener {
         data11!!.setOnClickListener(this)
         data12 = findViewById<View>(R.id.data12) as Button
         data12!!.setOnClickListener(this)
+        back = findViewById<View>(R.id.back) as Button
+        back!!.setOnClickListener(this)
 
         val date = LocalDate.now()
         val formatter = DateTimeFormatter.ofPattern("MM-yyyy")
@@ -109,7 +113,6 @@ class MainActivity() : Activity(), View.OnClickListener {
         data12?.text = formatted11.toString()
 
 
-
         // создаем объект для создания и управления версиями БД
         romahki = DBHelper(this)
     }
@@ -133,17 +136,18 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data1)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
+
             R.id.data2 -> {
                 val data2 = data2!!.text.toString()
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data2)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -153,7 +157,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data3)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -163,7 +167,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data4)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -173,7 +177,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data5)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -183,7 +187,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data6)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -193,7 +197,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data7)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -203,7 +207,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data8)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -213,7 +217,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data9)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -223,7 +227,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data10)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -233,7 +237,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data11)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -243,10 +247,14 @@ class MainActivity() : Activity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data12)
-                val rowID = db.insert("romashki", null, cv)
+                val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
+            }
+            R.id.back -> {
+                val intent = Intent(this, MainStart::class.java)
+                startActivity(intent)
             }
 
         }
@@ -254,26 +262,28 @@ class MainActivity() : Activity(), View.OnClickListener {
         romahki!!.close()
     }
 
-    internal inner class DBHelper(context: MainActivity) : SQLiteOpenHelper(context, "romashki", null, 1) {
+    inner class DBHelper(context: Context?) :
+        SQLiteOpenHelper(context, "romashki", null, 1) {
         override fun onCreate(db: SQLiteDatabase) {
             Log.d(LOG_TAG, "--- onCreate database ---")
             // создаем таблицу с полями
-            db.execSQL(("create table romashki ("
-                    + "id integer primary key autoincrement,"
-                    + "COD text,"
-                    + "DATE text" + ");"))
+            db.execSQL(
+                ("create table romashki ("
+                        + "id integer primary key autoincrement,"
+                        + "COD text,"
+                        + "DATE text" + ");")
+            )
 
         }
 
         override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
     }
 
+
+
+
+    operator fun Int.rangeTo(kvl: EditText?) {
+        1..100
+
+    }
 }
-
-private operator fun Int.rangeTo(kvl: EditText?) { 1..100
-
-}
-
-
-
-

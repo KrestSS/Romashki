@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Baza">
-        <activity android:name=".ActivityVvod"
-            android:theme="@style/Theme.Baza.NoActionBar">></activity>
+        <activity
+            android:name=".Activitydelete"
+            android:theme="@style/Theme.Baza.NoActionBar" />
+        <activity
+            android:name=".ActivityVvod"
+            android:theme="@style/Theme.Baza.NoActionBar">
+        </activity>
         <activity
             android:name=".ActivityKolvo"
             android:theme="@style/Theme.Baza.NoActionBar">

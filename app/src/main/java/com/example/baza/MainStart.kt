@@ -20,6 +20,7 @@ class MainStart : AppCompatActivity(), View.OnClickListener {
     var start: Button? = null
     var clear: Button? = null
     var kolVo: Button? = null
+    var del: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,8 @@ class MainStart : AppCompatActivity(), View.OnClickListener {
         clear!!.setOnClickListener(this)
         kolVo = findViewById<View>(R.id.KolVo) as Button
         kolVo!!.setOnClickListener(this)
+        del = findViewById<View>(R.id.del) as Button
+        del!!.setOnClickListener(this)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -48,6 +51,11 @@ class MainStart : AppCompatActivity(), View.OnClickListener {
                 }
                 R.id.KolVo -> {
                     val intent = Intent(this, ActivityKolvo::class.java)
+                    startActivity(intent)
+
+                }
+                R.id.del -> {
+                    val intent = Intent(this, Activitydelete::class.java)
                     startActivity(intent)
                 }
                 else -> {
