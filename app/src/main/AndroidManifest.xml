@@ -10,17 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baza">
         <activity
-            android:name=".Activitydelete"
+            android:name=".Activity"
             android:theme="@style/Theme.Baza.NoActionBar" />
+
         <activity
             android:name=".ActivityVvod"
-            android:theme="@style/Theme.Baza.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Baza.NoActionBar"/>
+
         <activity
             android:name=".ActivityKolvo"
-            android:theme="@style/Theme.Baza.NoActionBar">
+            android:theme="@style/Theme.Baza.NoActionBar"/>
             >
-        </activity>
+
         <activity android:name=".MainActivity" />
         <activity
             android:name=".MainStart"

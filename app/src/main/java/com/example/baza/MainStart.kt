@@ -9,18 +9,12 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
-import java.time.LocalDate
-import java.time.Period
-import java.time.format.DateTimeFormatter
 
 class MainStart : AppCompatActivity(), View.OnClickListener {
     var start: Button? = null
     var clear: Button? = null
     var kolVo: Button? = null
-    var del: Button? = null
+    var del : Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +49,7 @@ class MainStart : AppCompatActivity(), View.OnClickListener {
 
                 }
                 R.id.del -> {
-                    val intent = Intent(this, Activitydelete::class.java)
+                    val intent = Intent(this, Activity::class.java)
                     startActivity(intent)
                 }
                 else -> {

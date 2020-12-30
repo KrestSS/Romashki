@@ -17,7 +17,7 @@ import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
 
-class Activitydelete : AppCompatActivity(), View.OnClickListener {
+class Activity : AppCompatActivity(), View.OnClickListener {
     val LOG_TAG = "myLogs1"
     var COD: EditText? = null
     var DATE: EditText? = null
@@ -41,7 +41,7 @@ class Activitydelete : AppCompatActivity(), View.OnClickListener {
     @RequiresApi(Build.VERSION_CODES.O)
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kolvo)
+        setContentView(R.layout.activity_activitydelete)
         COD = findViewById<View>(R.id.COD) as EditText
         DATE = findViewById<View>(R.id.DATE) as EditText
         data1 = findViewById<View>(R.id.data1) as Button
@@ -136,6 +136,7 @@ class Activitydelete : AppCompatActivity(), View.OnClickListener {
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data1)
+                Log.d(LOG_TAG, "row inserted, ID = $DATE, $cv")
                 val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
@@ -145,8 +146,8 @@ class Activitydelete : AppCompatActivity(), View.OnClickListener {
             R.id.data2 -> {
                 val data2 = data2!!.text.toString()
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
-                cv.put("COD", cod)
-                cv.put("DATE", data2)
+                cv.put(COD, cod)
+                cv.put(DATE, data2)
                 val rowID = db.delete("romashki", cv.toString(),null)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
@@ -286,4 +287,8 @@ class Activitydelete : AppCompatActivity(), View.OnClickListener {
         1..100
 
     }
+}
+
+private fun ContentValues.put(date: EditText?, data2: String) {
+
 }
