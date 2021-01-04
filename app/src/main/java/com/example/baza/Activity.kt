@@ -3,19 +3,23 @@ package com.example.baza
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build.ID
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
+import kotlin.math.log
+
 
 class Activity : AppCompatActivity(), View.OnClickListener {
     val LOG_TAG = "myLogs1"
@@ -125,7 +129,7 @@ class Activity : AppCompatActivity(), View.OnClickListener {
         val cv = ContentValues()
 
         // получаем данные из полей ввода
-        val cod = COD!!.text.toString()
+        var cod = COD!!.text.toString()
 
 
         // подключаемся к БД
@@ -133,122 +137,134 @@ class Activity : AppCompatActivity(), View.OnClickListener {
         when (v.id) {
             R.id.data1 -> {
                 val data1 = data1!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
-                cv.put("COD", cod)
+                cv.put("COD",  cod)
                 cv.put("DATE", data1)
-                Log.d(LOG_TAG, "row inserted, ID = $DATE, $cv")
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
-            }
+                }
 
             R.id.data2 -> {
                 val data2 = data2!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
-                cv.put(COD, cod)
-                cv.put(DATE, data2)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                cv.put("COD",  cod)
+                cv.put("DATE", data2 )
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
+
             }
             R.id.data3 -> {
                 val data3 = data3!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
-                cv.put("COD", cod)
+                cv.put("COD",  cod)
                 cv.put("DATE", data3)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data4 -> {
                 val data4 = data4!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data4)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data5 -> {
                 val data5 = data5!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data5)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data6 -> {
                 val data6 = data6!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data6)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data7 -> {
                 val data7 = data7!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data7)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data8 -> {
                 val data8 = data8!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data8)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data9 -> {
                 val data9 = data9!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data9)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data10 -> {
                 val data10 = data10!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data10)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data11 -> {
                 val data11 = data11!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data11)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
             R.id.data12 -> {
                 val data12 = data12!!.text.toString()
+                cod = COD!!.text.toString()  +"minus"
                 Log.d(LOG_TAG, "--- Insert in romaski: ---")
                 cv.put("COD", cod)
                 cv.put("DATE", data12)
-                val rowID = db.delete("romashki", cv.toString(),null)
+                val rowID = db.insert("romashki", null,  cv)
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                 COD!!.text.clear()
                 DATE!!.text.clear()
@@ -263,16 +279,20 @@ class Activity : AppCompatActivity(), View.OnClickListener {
         romahki!!.close()
     }
 
+    private fun delete(s: String, any: Any, any1: Any) {
+
+    }
+
     inner class DBHelper(context: Context?) :
         SQLiteOpenHelper(context, "romashki", null, 1) {
         override fun onCreate(db: SQLiteDatabase) {
             Log.d(LOG_TAG, "--- onCreate database ---")
             // создаем таблицу с полями
             db.execSQL(
-                ("create table romashki ("
-                        + "id integer primary key autoincrement,"
-                        + "COD text,"
-                        + "DATE text" + ");")
+                    ("create table romashki ("
+                            + "id integer primary key autoincrement,"
+                            + "COD text,"
+                            + "DATE text" + ");")
             )
 
         }
@@ -289,6 +309,8 @@ class Activity : AppCompatActivity(), View.OnClickListener {
     }
 }
 
-private fun ContentValues.put(date: EditText?, data2: String) {
 
-}
+
+
+
+

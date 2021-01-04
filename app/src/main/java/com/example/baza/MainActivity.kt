@@ -144,7 +144,7 @@ class MainActivity() : Activity(), View.OnClickListener {
                 cv.put("COD", cod)
                 cv.put("DATE", data2)
                 val rowID = db.insert("romashki", null, cv)
-                Log.d(LOG_TAG, "row inserted, ID = $rowID")
+                Log.d(LOG_TAG, "row inserted, ID = $rowID, $cv")
                 COD!!.text.clear()
                 DATE!!.text.clear()
             }
