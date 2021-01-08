@@ -145,6 +145,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 Log.d(LOG_TAG, "row inserted, ID = $rowID")
                     COD!!.text.clear()
                     DATE!!.text.clear()
+                finish()
                 }
 
             R.id.data2 -> {
@@ -158,6 +159,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data3 -> {
                 val data3 = data3!!.text.toString()
@@ -170,6 +172,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data4 -> {
                 val data4 = data4!!.text.toString()
@@ -182,6 +185,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data5 -> {
                 val data5 = data5!!.text.toString()
@@ -194,6 +198,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data6 -> {
                 val data6 = data6!!.text.toString()
@@ -206,6 +211,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data7 -> {
                 val data7 = data7!!.text.toString()
@@ -218,6 +224,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data8 -> {
                 val data8 = data8!!.text.toString()
@@ -230,6 +237,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data9 -> {
                 val data9 = data9!!.text.toString()
@@ -242,6 +250,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data10 -> {
                 val data10 = data10!!.text.toString()
@@ -254,6 +263,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data11 -> {
                 val data11 = data11!!.text.toString()
@@ -266,6 +276,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.data12 -> {
                 val data12 = data12!!.text.toString()
@@ -278,10 +289,12 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
+                finish()
             }
             R.id.back -> {
                 val intent = Intent(this, MainStart::class.java)
                 startActivity(intent)
+                finish()
             }
 
         }

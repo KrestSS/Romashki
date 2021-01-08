@@ -15,11 +15,13 @@
 
         <activity
             android:name=".ActivityVvod"
-            android:theme="@style/Theme.Baza.NoActionBar"/>
+            android:theme="@style/Theme.Baza.NoActionBar"
+            android:noHistory="true"/>
 
         <activity
             android:name=".ActivityKolvo"
-            android:theme="@style/Theme.Baza.NoActionBar"/>
+            android:theme="@style/Theme.Baza.NoActionBar"
+            android:noHistory="true"/>
             >
 
         <activity android:name=".MainActivity" />

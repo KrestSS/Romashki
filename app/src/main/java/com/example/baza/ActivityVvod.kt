@@ -14,6 +14,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_kolvo.*
 import kotlinx.android.synthetic.main.activity_vvod.*
+import com.example.baza.ActivityVvod as ComExampleBazaActivityVvod
 
 
 open class ActivityVvod : AppCompatActivity(), View.OnClickListener {
@@ -56,6 +57,7 @@ open class ActivityVvod : AppCompatActivity(), View.OnClickListener {
 
                             val intent = Intent(this, ActivityKolvo::class.java)
                             startActivity(intent)
+                            finish()
                         }
 
                     }
@@ -65,5 +67,6 @@ open class ActivityVvod : AppCompatActivity(), View.OnClickListener {
         }
 
     }
+
 }
 
