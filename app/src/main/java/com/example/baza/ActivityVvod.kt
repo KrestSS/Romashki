@@ -52,9 +52,8 @@ open class ActivityVvod : AppCompatActivity(), View.OnClickListener {
                         var n = kvl
                         repeat(n - 1) {
                             var put = db.insert("romashki", null, cv)
-                            //  COD!!.text.clear()
-                          //   DATE!!.text.clear()
-
+                            c.close()
+                        }
                             val intent = Intent(this, ActivityKolvo::class.java)
                             startActivity(intent)
                             finish()
@@ -68,5 +67,5 @@ open class ActivityVvod : AppCompatActivity(), View.OnClickListener {
 
     }
 
-}
+
 
