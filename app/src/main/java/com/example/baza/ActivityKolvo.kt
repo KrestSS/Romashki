@@ -37,7 +37,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
     var data10: Button? = null
     var data11: Button? = null
     var data12: Button? = null
-    var back : Button? = null
+
 
 
     /** Called when the activity is first created.  */
@@ -71,8 +71,7 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
         data11!!.setOnClickListener(this)
         data12 = findViewById<View>(R.id.data12) as Button
         data12!!.setOnClickListener(this)
-        back = findViewById<View>(R.id.back) as Button
-        back!!.setOnClickListener(this)
+
 
         val date = LocalDate.now()
         val formatter = DateTimeFormatter.ofPattern("MM-yyyy")
@@ -289,11 +288,6 @@ class ActivityKolvo : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 COD!!.text.clear()
                 DATE!!.text.clear()
-                finish()
-            }
-            R.id.back -> {
-                val intent = Intent(this, MainStart::class.java)
-                startActivity(intent)
                 finish()
             }
 
